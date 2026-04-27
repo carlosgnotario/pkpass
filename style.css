@@ -1,3 +1,8 @@
+/* 1rem = 10px when viewport is 945px wide; all design sizes use rem from that. */
+html {
+    font-size: calc(10 * 100vw / 945);
+}
+
 @font-face {
     font-family: "SF Pro Text";
     src: url("SF-Pro-Text-Regular.otf") format("opentype");
@@ -20,15 +25,6 @@
     padding: 0;
 }
 
-/* 100vh on mobile = “large” viewport, often taller than what you *see* (it ignores
-   the dynamic URL bar). 100dvh and -webkit-fill-available follow the real screen. */
-html {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    height: 100%;
-    height: -webkit-fill-available;
-}
-
 body {
     font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-weight: 400;
@@ -36,15 +32,11 @@ body {
     color: #ffffff;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto minmax(0, 1fr) auto;
-    min-height: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
-    min-height: -webkit-fill-available;
-    font-size: 39px;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    font-size: 3.9rem;
     line-height: 1.4;
-    padding: max(48px, env(safe-area-inset-top, 0px)) max(48px, env(safe-area-inset-right, 0px))
-        max(110px, env(safe-area-inset-bottom, 0px)) max(48px, env(safe-area-inset-left, 0px));
+    padding: 4.8rem 4.8rem 11rem;
     overflow: hidden;
 }
 
@@ -58,9 +50,9 @@ body {
     right: 0;
     place-self: end;
     grid-area: 1/1;
-    height: 106px;
-    width: 106px;
-    margin-right: -8px;
+    height: 10.6rem;
+    width: 10.6rem;
+    margin-right: -0.8rem;
     background-color: red;
     border-radius: 50%;
     /* background: gradient diagonal from 424345 to #2c2d2f to 424345; */
@@ -74,16 +66,16 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    line-height: 180px;
-    font-size: 90px;
+    line-height: 18rem;
+    font-size: 9rem;
     font-weight: 400;
-    margin-top: -5px;
+    margin-top: -0.5rem;
 }
 
 .close:before {
     content: "";
     position: absolute;
-    inset: 3px;
+    inset: 0.3rem;
     background-color: #222325;
     border-radius: 50%;
 }
@@ -91,12 +83,12 @@ body {
 .info {
     align-self: center;
     display: flex;
-    gap: 100px;
+    gap: 10rem;
     flex-direction: column;
 }
 
 .qr {
-    border-radius: 79px;
+    border-radius: 7.9rem;
     overflow: hidden;
     height: auto;
     width: auto;
@@ -120,7 +112,7 @@ h4 {
 }
 
 h1 {
-    font-size: 39px;
+    font-size: 1em;
     text-align: center;
     grid-area: 1/1;
 }
@@ -131,8 +123,8 @@ h1 {
 
 .type p {
     display: flex;
-    gap: 34px;
-    margin-top: 10px;
+    gap: 3.4rem;
+    margin-top: 1rem;
 }
 
 .type span {
@@ -147,14 +139,14 @@ h1 {
 .button {
     font-weight: 500;
     color: #000002;
-    padding: 32px;
-    max-height: 125px;
+    padding: 3.2rem;
+    max-height: 12.5rem;
     display: flex;
     background-color: #f3f4f6;
-    border-radius: 999px;
+    border-radius: 6.25rem;
     width: 100%;
     justify-content: center;
-    gap: 20px;
+    gap: 2rem;
 }
 
 .button img {
