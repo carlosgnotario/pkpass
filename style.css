@@ -1,0 +1,149 @@
+@font-face {
+    font-family: "SF Pro Text";
+    src: url("SF-Pro-Text-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SF Pro Text";
+    src: url("SF-Pro-Text-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 400;
+    background-color: #222325;
+    color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    font-size: 39px;
+    line-height: 1.4;
+    padding: 48px 48px 110px;
+    overflow: hidden;
+}
+
+.heading {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+
+.close {
+    right: 0;
+    place-self: end;
+    grid-area: 1/1;
+    height: 106px;
+    width: 106px;
+    margin-right: -8px;
+    background-color: red;
+    border-radius: 50%;
+    /* background: gradient diagonal from 424345 to #2c2d2f to 424345; */
+    background: linear-gradient(to bottom right, #494a4d, #222325, #494a4d);
+    position: relative;
+}
+
+.close:after {
+    content: "×";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 180px;
+    font-size: 90px;
+    font-weight: 400;
+    margin-top: -5px;
+}
+
+.close:before {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background-color: #222325;
+    border-radius: 50%;
+}
+
+.info {
+    align-self: center;
+    display: flex;
+    gap: 100px;
+    flex-direction: column;
+}
+
+.qr {
+    border-radius: 79px;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.qr img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h4 {
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 39px;
+    text-align: center;
+    grid-area: 1/1;
+}
+
+.type {
+    margin-right: auto;
+}
+
+.type p {
+    display: flex;
+    gap: 34px;
+    margin-top: 10px;
+}
+
+.type span {
+    font-weight: 400;
+    color: #a8a9ab;
+}
+
+.type h4 {
+    color: #a8a9ab;
+}
+
+.button {
+    font-weight: 500;
+    color: #000002;
+    padding: 32px;
+    max-height: 125px;
+    display: flex;
+    background-color: #f3f4f6;
+    border-radius: 999px;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button img {
+    max-height: 100%;
+}

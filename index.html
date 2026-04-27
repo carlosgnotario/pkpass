@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Gaming Meetup St. Julian's</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="heading">
+            <h1>Gaming Meetup St. Julian's</h1>
+            <div class="close"></div>
+        </div>
+        <div class="info">
+            <div class="qr">
+                <img src="qr.png" alt="QR Code">
+            </div>
+            <div class="type">
+                <h4>Ticket</h4>
+                <p><span>1×</span>Standard</p>
+            </div>
+        </div>
+        <a class="button" href="https://apps.apple.com/us/app/apple-wallet/id1160481993">
+            <img src="apple-wallet-seeklogo.png" alt="Apple Wallet">
+            Add to Apple Wallet
+        </a>
+        <script>
+            (function () {
+                var root = document.documentElement;
+                function isFs() {
+                    return (
+                        document.fullscreenElement ||
+                        document.webkitFullscreenElement ||
+                        document.mozFullScreenElement
+                    );
+                }
+                function requestFs() {
+                    var p =
+                        (root.requestFullscreen && root.requestFullscreen()) ||
+                        (root.webkitRequestFullscreen && root.webkitRequestFullscreen()) ||
+                        (root.mozRequestFullScreen && root.mozRequestFullScreen());
+                    if (p && p.catch) p.catch(function () {});
+                }
+                function exitFs() {
+                    if (document.exitFullscreen) document.exitFullscreen();
+                    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+                    else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+                }
+                var qr = document.querySelector(".qr");
+                if (qr)
+                    qr.addEventListener("click", function () {
+                        if (isFs()) exitFs();
+                        else requestFs();
+                    });
+                var close = document.querySelector(".close");
+                if (close) close.addEventListener("click", exitFs);
+            })();
+        </script>
+    </body>
+</html>
