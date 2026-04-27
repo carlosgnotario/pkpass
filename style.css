@@ -28,7 +28,7 @@ html {
 body {
     font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-weight: 400;
-    background-color: #222325;
+    background-color: red;
     color: #ffffff;
     display: grid;
     grid-template-columns: 1fr;
